@@ -72,29 +72,42 @@ return {
   },
   {
     "jackMort/ChatGPT.nvim",
-    event = "VeryLazy",
-    dependencies = {
-      "MunifTanjim/nui.nvim",
-      "nvim-lua/plenary.nvim",
-      "nvim-telescope/telescope.nvim"
-    },
-    config = function()
-      require("chatgpt").setup({
-        api_key_cmd = "pass show openai/api/token"
-      })
-    end,
+      event = "VeryLazy",
+      config = function()
+        require("chatgpt").setup()
+      end,
+      dependencies = {
+        "MunifTanjim/nui.nvim",
+        "nvim-lua/plenary.nvim",
+        "folke/trouble.nvim", -- optional
+        "nvim-telescope/telescope.nvim"
+      }
   },
-  {
-    "zbirenbaum/copilot.lua",
-    -- Lazy load when event occurs. Events are triggered
-    -- as mentioned in:
-    -- https://vi.stackexchange.com/a/4495/20389
-    event = "InsertEnter",
-    -- You can also have it load at immediately at
-    -- startup by commenting above and uncommenting below:
-    -- lazy = false
-    opts = overrides.copilot,
-  },
+  -- {
+  --   "jackMort/ChatGPT.nvim",
+  --   event = "VeryLazy",
+  --   dependencies = {
+  --     "MunifTanjim/nui.nvim",
+  --     "nvim-lua/plenary.nvim",
+  --     "nvim-telescope/telescope.nvim"
+  --   },
+  --   config = function()
+  --     require("chatgpt").setup({
+  --       api_key_cmd = "pass xxx"
+  --     })
+  --   end,
+  -- },
+  -- {
+  --   "zbirenbaum/copilot.lua",
+  --   -- Lazy load when event occurs. Events are triggered
+  --   -- as mentioned in:
+  --   -- https://vi.stackexchange.com/a/4495/20389
+  --   event = "InsertEnter",
+  --   -- You can also have it load at immediately at
+  --   -- startup by commenting above and uncommenting below:
+  --   -- lazy = false
+  --   opts = overrides.copilot,
+  -- },
   {
     "hrsh7th/nvim-cmp",
     dependencies = {

@@ -31,21 +31,27 @@ end
 --   capabilities = nvlsp.capabilities,
 -- }
 
-lspconfig.tsserver.setup {
+-- tsserver is soon to be deprecated
+-- lspconfig.tsserver.setup {
+--   on_attach = nvlsp.on_attach,
+--   capabilities = nvlsp.capabilities,
+--   init_options = {
+--     preferences = {
+--       disableSuggestions = true,
+--     }
+--   },
+--   commands = {
+--     OrganizeImports = {
+--       organize_imports,
+--       description = "Organize Imports",
+--     }
+--   }
+-- }
+
+lspconfig.ts_ls.setup({
   on_attach = nvlsp.on_attach,
   capabilities = nvlsp.capabilities,
-  init_options = {
-    preferences = {
-      disableSuggestions = true,
-    }
-  },
-  commands = {
-    OrganizeImports = {
-      organize_imports,
-      description = "Organize Imports",
-    }
-  }
-}
+})
 
 lspconfig.html.setup({
   on_attach = nvlsp.on_attach,
