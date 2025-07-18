@@ -48,7 +48,7 @@ end
 --   }
 -- }
 
-lspconfig.ts_ls.setup({
+lspconfig.tsserver.setup({
   on_attach = nvlsp.on_attach,
   capabilities = nvlsp.capabilities,
 })

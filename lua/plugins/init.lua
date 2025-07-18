@@ -42,7 +42,8 @@ return {
         "mypy",
         "ruff",
         "python-lsp-server",
-        "typescript-language-server"
+        "typescript-language-server",
+        "lua-language-server"
       },
     },
   },
@@ -70,19 +71,19 @@ return {
       },
     },
   },
-  {
-    "jackMort/ChatGPT.nvim",
-      event = "VeryLazy",
-      config = function()
-        require("chatgpt").setup()
-      end,
-      dependencies = {
-        "MunifTanjim/nui.nvim",
-        "nvim-lua/plenary.nvim",
-        "folke/trouble.nvim", -- optional
-        "nvim-telescope/telescope.nvim"
-      }
-  },
+  -- {
+  --   "jackMort/ChatGPT.nvim",
+  --     event = "VeryLazy",
+  --     config = function()
+  --       require("chatgpt").setup()
+  --     end,
+  --     dependencies = {
+  --       "MunifTanjim/nui.nvim",
+  --       "nvim-lua/plenary.nvim",
+  --       "folke/trouble.nvim", -- optional
+  --       "nvim-telescope/telescope.nvim"
+  --     }
+  -- },
   -- {
   --   "jackMort/ChatGPT.nvim",
   --   event = "VeryLazy",

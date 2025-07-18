@@ -37,3 +37,6 @@ require "nvchad.autocmds"
 vim.schedule(function()
   require "mappings"
 end)
+
+-- Configure Python path for Neovim
+vim.g.python3_host_prog = "/wssdev/ec2-user/.config/nvim/.venv/bin/python"
