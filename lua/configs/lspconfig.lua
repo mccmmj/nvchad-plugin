@@ -25,14 +25,14 @@ for _, lsp in ipairs(servers) do
 end
 
 -- configuring single server, example: typescript
--- lspconfig.tsserver.setup {
+-- lspconfig.ts_ls.setup {
 --   on_attach = nvlsp.on_attach,
 --   on_init = nvlsp.on_init,
 --   capabilities = nvlsp.capabilities,
 -- }
 
--- tsserver is soon to be deprecated
--- lspconfig.tsserver.setup {
+-- tsserver has been deprecated upstream; use ts_ls instead
+-- lspconfig.ts_ls.setup {
 --   on_attach = nvlsp.on_attach,
 --   capabilities = nvlsp.capabilities,
 --   init_options = {
@@ -48,7 +48,7 @@ end
 --   }
 -- }
 
-lspconfig.tsserver.setup({
+lspconfig.ts_ls.setup({
   on_attach = nvlsp.on_attach,
   capabilities = nvlsp.capabilities,
 })
@@ -66,7 +66,16 @@ lspconfig.cssls.setup({
 lspconfig.pylsp.setup({
   on_attach = nvlsp.on_attach,
   capabilities = nvlsp.capabilities,
-  filetypes = {"python"},
+  filetypes = { "python" },
+  settings = {
+    pylsp = {
+      plugins = {
+        pycodestyle = {
+          ignore = { "E501" },
+        },
+      },
+    },
+  },
 })
 
 lspconfig.clangd.setup {
